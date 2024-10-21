@@ -1,0 +1,312 @@
+{% comment %} {% load static %} {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/contact1.css' %}"> {% endcomment %}
+</head>
+<style> 
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@300;400;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.Cont{
+    
+    background-color:red;
+    position:absolute; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+
+.contact
+{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    {% comment %} background-image: url('/static/images/contact2.png'); {% endcomment %}
+    background-image: url('https://g-square.in/wp-content/uploads/2017/08/Contact-Us.png');
+
+    background-size: cover;
+}
+.contact .content
+{
+    max-width: 800px;
+    text-align: center ;
+}
+.contact .content h2
+{
+    font-size: 36px;
+    font-weight: 500;
+    color: white;
+}
+.contact .content p
+{
+    font-weight: 300;
+    color:white;
+}
+.container
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.container .contactInfo
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .contactInfo .box
+{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.container .contactInfo .box .icon
+{
+    min-width: 60px;
+    height: 60px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.container .contactInfo .box .text
+{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: white;
+    flex-direction: column;
+    font-weight: 300;
+}
+.container .contactInfo .box .text h3
+{
+    font-weight: 500;
+    color: white;
+}
+.contactForm
+{
+    width: 40%;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+}
+.contactForm h2
+{
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
+}
+.contactForm .inputBox
+{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+.contactForm .inputBox span
+{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:focus ~ span
+{
+    color: #c18e8e;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.contactForm .inputBox input[type='submit']
+{
+    width: 100px;
+    background: #8DA2B6;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-left: 40%;
+}
+
+@media (max-width: 991px)
+{
+    .contact
+    {
+        padding: 50px;
+    }
+    .container
+    {
+        flex-direction: column;
+    }
+    .container .contactInfo
+    {
+        margin-bottom: 40px;
+    }
+    .container .contactInfo,
+    .contactForm
+    {
+        width: 100%;
+    }
+}
+
+.mainicon{
+    display:flex;
+    justify-content:space-between;
+    background: #111e88;
+    height: 8vh;
+}
+.lefticon h1{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 3em;
+    font-weight: bolder;
+    /* margin-bottom: 1em; */
+    /* margin-top: -2em; */
+    
+}
+.lefticon a{
+    text-decoration: none;
+}
+        span{
+            color:#ff7782;
+            margin-right:10px;
+        }
+
+        .righticon{
+            margin-top: 14px;
+            margin-right: 3em;
+        }
+        .righticon a{
+            text-decoration: none;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .righticon a:hover{
+            color: #ff7782;
+        }
+
+</style>
+
+<body>
+  
+   
+    <section class="contact">
+        <section class="Cont">
+           
+
+            </section>
+            <div class="lefticon">
+                <a href="{% url 'home' %}">
+                <h1>Get <span>iT</span></h1></a>
+            </div>
+            <!-- <div class="righticon">
+                <a href="{% url 'logout' %}"><h4>Log out</h4></a>
+            </div> -->
+        <div class="content">
+           
+
+            
+
+          
+            <h2>Contact Us</h2>
+            <p>We're here to help! Whether you have questions, feedback, or need support, our team is ready to assist you. Feel free to reach out to us through any of the following methods</p>
+     
+        
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Maulana Abul Kalam Azad University Of Technology,<br>Nadia,West Bengal,<br>India</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+91-7286594781</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>get.it@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Your Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Your Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea required="required"></textarea>
+                        <span>Type Your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- <section>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae consequuntur placeat ullam eveniet, excepturi itaque earum esse labore a quis optio odit provident? Perspiciatis quo, fugit soluta eos placeat suscipit, recusandae amet ipsa commodi voluptas dolorem maiores beatae porro tenetur officiis deserunt nam! Laudantium cumque nobis dignissimos a nesciunt, aliquid eveniet omnis distinctio, velit maiores consectetur praesentium pariatur dolorum itaque? Aperiam dicta praesentium, nisi suscipit odio corporis necessitatibus quasi voluptas hic distinctio quae eum fuga minima! Magnam consectetur perspiciatis recusandae atque praesentium adipisci, ad ea similique amet molestiae asperiores animi suscipit illum a dolorem sint? A tenetur eveniet totam et sed. Sapiente iste itaque dolorum aspernatur id? Unde assumenda aliquid, facilis molestias reprehenderit excepturi repellat provident iste eum reiciendis corporis ex odit dolorum neque repudiandae recusandae minima dolore cum voluptate accusantium expedita pariatur fugiat optio nesciunt. Veritatis exercitationem accusamus veniam? Accusamus necessitatibus voluptate est amet nostrum, atque animi voluptas labore laboriosam ullam quibusdam. Perspiciatis nihil dolor corporis numquam expedita voluptatibus accusantium unde distinctio, vel modi. Soluta optio reprehenderit in assumenda? Neque laudantium molestiae doloribus dolores odit? Dolorum voluptatibus cupiditate consectetur illum voluptas nesciunt dicta facere fuga, eveniet cumque, id laboriosam distinctio illo voluptatem unde aperiam quos vitae recusandae iusto odit rem. Eos laudantium, dolore provident eius neque ipsum tempora sapiente est totam labore? Molestiae nesciunt ipsam, eum quod, laborum fugiat fuga obcaecati in enim veniam ut magni unde amet facilis delectus commodi mollitia. Doloremque sit quisquam perferendis velit quam tenetur pariatur sed eius sunt eveniet facere vero soluta, dicta dolores, quidem eum veritatis voluptates harum unde. Nostrum excepturi quo exercitationem quae fuga inventore perferendis amet non magnam repudiandae ipsam eligendi temporibus voluptates, beatae quod ratione possimus, nemo quidem consequuntur laborum accusamus, quasi ullam in? Corporis, atque, ipsa debitis officiis veritatis labore maiores dolorem, eius eaque necessitatibus perspiciatis! Necessitatibus, assumenda nostrum.
+        </p>
+    </section> -->
+</body>
+
+</html>

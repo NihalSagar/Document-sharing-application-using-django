@@ -1,0 +1,40 @@
+{% extends 'Profilebase.html' %}
+{%  block content %}
+
+<div class="container3">
+    
+    <table class="table2">
+        <thead class="thead2 thead-dark">
+            <tr>
+              
+              <th scope="col">Title</th>
+              <th scope="col">Uploaded By</th>
+              <th scope="col">Category</th>
+              <th scope="col">Action</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            {% for favorite in favorite_books %}
+            <tr class="rowbook">
+                
+                <td class="rowbook"> <div class="book-info">
+                    <strong><a href="{{ book.pdf.url}}">{{ favorite.book.title }}</a></strong> 
+                    
+                </div></td>
+                <td>{{ favorite.book.author }}</td>
+                <td>{{ favorite.book.category }}</td>
+                <td> <button class="fav2"><a class="fav2" href="{% url 'remove_favorite' favorite.book.id %}">Remove from favorites</a></button></td>
+            </tr>
+            {% empty %}
+            <li>No favorite books yet</li>
+        {% endfor %}
+        
+        </tbody>
+    </table>
+    
+   
+    
+</div>
+
+{% endblock content %}

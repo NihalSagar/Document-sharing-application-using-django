@@ -1,0 +1,33 @@
+{% extends 'upbase.html' %}
+
+{% block title %}My Books | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<h2>My Uploaded Books</h2>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Cover</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Category</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td><img src="{{ book.cover.url }}" style="height: 100px" alt="Cover" /></td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.category }}</td>
+            <td class="down1">
+                <a class="download5 btn btn-danger mr-2"href="{% url 'delete_my_book' book.id %}" >Delete</a>
+                <a class="download2 btn btn-primary mr-2" href="{% url 'add_favorite' book.id %}" role="button">Save</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

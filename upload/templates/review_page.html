@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rating</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+        .rating {
+            margin-top: 40px;
+            border: none;
+            float: left;
+        }
+        .rating > label {
+            color: #9C9C9C;
+            font-size: 2em;
+            float: right;
+            cursor: pointer;
+        }
+        .rating > label:before {
+            margin: 5px;
+            font-size: 2em;
+            font-family: FontAwesome;
+            content: "\f005";
+            display: inline-block;
+        }
+        .rating > input {
+            display: none;
+        }
+        .rating > input:checked ~ label,
+        .rating:not(:checked) > label:hover,
+        .rating:not(:checked) > label:hover ~ label {
+            color: #F79426;
+        }
+        .rating > input:checked + label:hover,
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label,
+        .rating > input:checked ~ label:hover ~ label {
+            color: #FECE31;
+        }
+    </style>
+</head>
+<body>
+<h3>Rate the book</h3>
+
+<div class="col-md-6">
+    <p style="font-weight:600;">Rate:</p>
+    <form method="post" action="{% url 'review_page' %}">
+        {% csrf_token %}
+        <input type="hidden" name="book_id" value="{{ book_id }}">
+        <div class="col-md-6">
+            <div class="form-group required">
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5"/>
+                    <label class="star" for="star5" title="Awesome"></label>
+                    <input type="radio" id="star4" name="rating" value="4"/>
+                    <label class="star" for="star4" title="Great"></label>
+                    <input type="radio" id="star3" name="rating" value="3"/>
+                    <label class="star" for="star3" title="Very good"></label>
+                    <input type="radio" id="star2" name="rating" value="2"/>
+                    <label class="star" for="star2" title="Good"></label>
+                    <input type="radio" id="star1" name="rating" value="1"/>
+                    <label class="star" for="star1" title="Bad"></label>
+                </div>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-primary mt-2" value="Submit Rating">
+        </div>
+    </form>
+</div>
+
+<script>
+    // JavaScript for enabling rating selection
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.rating input[type="radio"]');
+        
+        stars.forEach(function(star) {
+            star.addEventListener('change', function() {
+                const checkedStars = this.parentNode.querySelectorAll('input[type="radio"]:checked');
+                checkedStars.forEach(function(checkedStar) {
+                    checkedStar.nextElementSibling.classList.add('checked');
+                });
+
+                const uncheckedStars = this.parentNode.querySelectorAll('input[type="radio"]:not(:checked)');
+                uncheckedStars.forEach(function(uncheckedStar) {
+                    uncheckedStar.nextElementSibling.classList.remove('checked');
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

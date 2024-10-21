@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    section{
+        background:blue;
+        height:100vh;
+      
+    }
+    .containerlogin{
+        display:flex;
+       
+        background-color: green;
+        position: relative;
+    }
+    .containermid{
+        background:red;
+        display:flex;
+    }
+</style>
+<body>
+    
+    <section>
+        <div class="containerlogin">
+            <div class="containermid">
+
+           
+            <div class="leftlogin"><img src="https://cdn-icons-png.flaticon.com/512/6601/6601115.png" alt=""></div>
+            <div class="rightlogin"><h1>Login Form</h1>
+                <form action="" method="POST" novalidate>
+                    <div class="login">
+                        <h1>Login Form</h1>
+                    </div>
+                    
+                    {% csrf_token %}
+                    {%for fm in form%}
+                    <div class="password">
+                        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}<br><br>
+        
+        
+                        
+                    </div>
+                  
+                    {% endfor %}
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

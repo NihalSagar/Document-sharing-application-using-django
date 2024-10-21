@@ -1,0 +1,360 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"/>
+    <style>
+      .head {
+        display: flex;
+        margin-left: 25px;
+        margin-right: 25px;
+      }
+      .about{
+        font-size: 35px;
+      }
+      .para {
+        width: 70%;
+        text-align: justify;
+        text-indent: 40px;
+        letter-spacing: 2px;
+      }
+      .button{
+            border: none;
+            background-color: rgb(9, 9, 124);
+            color:yellow;
+            text-align: center;
+            padding: 10px;
+            display: inline-block;
+        }
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: Open Sans;
+}
+
+section {
+  width: 100%;
+ height: 85vh;
+}
+
+.mainabout{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+}
+.leftabout {
+  margin-left: 4em;
+}
+.leftabout a{
+  text-decoration: none;
+  
+
+}
+.leftabout h1{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+}
+span{
+  color: #ff7782;
+}
+.rightabout p {
+  line-height: 2;
+  font-size: 20px;
+  text-align: center;
+  padding: 0 10em 0 8em;
+}
+.rightabout h2{
+  text-align: center;
+}
+.rightabout h1{
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.rightabout{
+  margin-top: 1em;
+}
+
+footer{
+          text-align: left;
+          text-transform: uppercase;
+          background-color: #1d1d42;
+        
+          padding: 20px;
+          color: white;
+          font-size: 10px;
+          
+        }
+        
+        .social{
+          display: flex;
+          justify-content: space-between ;
+        }
+        
+        .sociallogo{
+          display: flex;
+          gap: 15px;
+          text-decoration: none;
+          list-style-type: none;
+        
+        }
+        .logoget span{
+          color: var(--clr-danger);
+        }
+        
+        .link{
+          max-width: 30px;
+        }
+.footer-distributed{
+	background: #040369;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+
+}
+.linkdn{
+    width: 50px;
+}
+
+.facebook{
+    width: 30px;
+
+}
+.insta{
+    width: 50px;
+}
+.github{
+    width: 30px;
+}
+</style>
+  </head>
+  <body>
+    
+<section>
+  
+ <div class="mainabout">
+  <div class="leftabout"><img src="https://wesde.site/wp-content/uploads/2022/12/libra-1-1.png" alt="">
+  <a href="{% url 'home' %}"><h1>Get <span>iT</span></h1></a></div>
+  <div class="rightabout">
+    <h1>About</h1>
+    <p><b>Get-IT</b> Your go-to platform for effortless file management. Easily upload, download, and share files of any type and size with our user-friendly interface. Enjoy peace of mind with advanced encryption ensuring your data's security. Access your files anytime, anywhere with our reliable cloud storage and cross-platform compatibility. Share files seamlessly with secure links and customizable permissions. Experience fast and reliable performance, making file transfers quick and efficient. EasyFileHub simplifies your file management needs, whether for personal use or professional collaboration. Join us today and start managing your files with ease and confidence!
+
+
+
+
+
+
+  </p></div>
+ </div>
+</section>
+<footer>
+        
+  <ul class="social">
+      <div>Copyright © 2023. All Rights Reserved</span></div>
+     <div class="sociallogo">
+      <a href="https://www.linkedin.com/in/nima-dorjee-lama-b44081217" target="_blank">
+          <li><img class="linkdn" src="https://logolook.net/wp-content/uploads/2021/06/Symbol-Linkedin.png" class="link" alt="Linkedin" ></li>
+      </a>
+      <a href="" target="_blank">
+          <li><img class="facebook" src="https://th.bing.com/th/id/R.e790c25db5e52838040686612b1a732c?rik=uVuLX4sResGMKA&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19757.png&ehk=JL234rPBfx%2bf3tobhEVbPdNgJiWOhk251WyRwRAg940%3d&risl=&pid=ImgRaw&r=0" class="link" alt="facebook"></li>
+      </a>
+      <a href="" target="_blank">
+          <li><img class="insta" src="https://newhorizonindia.edu/co-curricular/healthxcel/wp-content/uploads/sites/7/2023/12/Instagram-icon-Logo-2016-present-1024x576.png" alt="insta"></li>
+      </a>
+      <a href="https://github.com/NIMADORJEELAMA" target="_blank">
+          <li><img class="github" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914417/github-icon-md.png" alt="github" ></li>
+      </a>
+      </div>
+
+      
+  </ul>
+</footer>
+    
+  </body>
+</html>

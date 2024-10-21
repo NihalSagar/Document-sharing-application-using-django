@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+     {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">  {% endcomment %}
+
+    <title>
+        {% block title %}My Books{% endblock title %}
+    </title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+    body{
+     
+    font-family: 'Poppins', sans-serif;
+    
+    }
+    
+    
+    /* variables */
+    
+    
+    :root {
+      --clr-primary: #7380ec;
+      --clr-danger: #ff7782;
+      --clr-success: #41f1b6;
+      --clr-white: #fff;
+      --clr-info-dark: #7d8da1;
+      --clr-info-light: #dce1eb;
+      --clr-dark: #363949;
+      --clr-warnig: #ff4edc;
+      --clr-light: rgba(132, 139, 200, 0.18);
+      --clr-primary-variant: #111e88;
+      --clr-dark-variant: #677483;
+      --clr-color-background: #f6f6f9;
+    
+      --card-border-radius: 2rem;
+      --border-radius-1: 0.4rem;
+      --border-radius-2: 0.8rem;
+      --border-radius-3: 1.2rem;
+    
+      --card-padding: 1.8rem;
+      --padding-1: 1.2rem;
+      --box-shadow: 0 2rem 3rem var(--clr-light);
+    
+    }
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        border: 0;
+        list-style: none;
+        appearance: none;
+    }
+    
+    body{
+        font-family: 'Poppins', sans-serif;
+        width: 100vw;
+        height: 100vh;
+        font-size: 0.88rem;
+        user-select: none;
+        overflow-x: hidden;
+        background: var(--clr-color-background);
+    
+    }
+    .container_new{
+        display: grid;
+        width: 150%;
+        gap: 3rem;
+        
+        /* grid-template-columns: 14rem auto 14rem; */
+        /* grid-template-columns: 14rem auto 14rem; */
+
+        margin: 0 auto;
+    }
+   .home1{
+    display:flex;
+    width: 100%;
+   } 
+
+
+
+/*aside*/
+
+aside{
+    height: 100vh;
+    width: 80vh;
+    margin-left:20px;
+}
+aside .top{
+    background-color: var(--clr-white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1.4rem;
+}
+aside .logo{
+    display: flex;
+    gap: 1rem;
+}
+
+aside .top div.close span{
+    display: none;
+}
+
+
+/*sidebar*/
+
+aside .sidebar{
+    background-color: var(--clr-white);
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    position: relative;
+    top: 1rem;
+}
+aside h3{
+    font-weight: 500;
+}
+
+aside .sidebar a{
+    display: flex;
+    color: var(--clr-info-dark);
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    height: 3.2rem;
+    transition: all .1s ease-in;
+}
+
+aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all .1s ease-in;
+}
+
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+
+aside .sidebar a.active{
+    background: var(--clr-light);
+    color: var(--clr-primary);
+    margin-left: 0;
+    border-left: 5px solid var(--clr-primary);
+}
+
+aside .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 100%;
+    background-color: var(--clr-primary);
+}
+aside .sidebar a:hover{
+    color: var(--clr-primary);
+}
+aside .sidebar a:hover span{
+    margin-left: .5rem;
+    transition: .4s ease;
+}
+
+/* Top section*/
+
+
+.filter{
+    margin-top: -4rem;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 5rem;
+    margin-bottom: 2rem;
+}
+.dropbtn {
+    margin-top: .4rem;
+    background-color: var(--clr-white);
+    color: var(--clr-info-dark);
+    padding: 2px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn span{
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+   
+    
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    border-radius: 15px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: var(--clr-info-light);
+    color:white;
+  }
+
+
+.books1{
+    /* display:flex; */
+    width:200%;
+    margin-left: 6rem;
+    margin-top: 5.8rem;
+    /* background-color: red; */
+    
+}
+
+.table{
+    width: 140vh;
+    /* background-color: red; */
+    border-radius: 10px;
+    margin-top:-1rem;
+    
+
+    
+}
+.upload{
+    padding-top: 10px ;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--clr-danger);
+    border-radius: 10px;
+    color: white;
+    margin-left: 10px;
+    
+
+     
+   
+}
+
+.thead-dark{
+    
+    background-color: var(--clr-primary-variant);
+    color: white;
+    
+}
+.thead-dark th{
+    padding: 4.8px;
+}
+td{
+    padding: 3px 10px;
+
+}
+
+.navbar5{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--clr-primary-variant);
+    padding-top: 20px ;
+}
+
+.navbar5 h2{
+    
+    
+    color: white;
+    margin-bottom: 4px;
+    margin-left: 3rem;
+}
+.navbar5 ul{
+    display: flex;
+    margin-right: 50px;
+    gap: 20px;
+    justify-content: space-around;
+    
+}
+.navbar5 h3:hover{
+    color: var(--clr-danger);
+}
+.navbar5 h3{
+    color: white;
+
+}
+.navbar5 h2 span{
+    color: var(--clr-danger);
+}
+.add_book {
+    text-align: left;
+    margin-top: -30px;
+    margin-left: 2rem;
+    font-size:18px;
+}
+.form3 {
+        
+        /* align: center; */
+        height: 76vh;
+        width: 70%;
+        margin: auto;
+        padding: 55px; 
+        margin-top: -20px;
+        /* margin-bottom: 50px; */
+        margin-right:-15%;
+        padding-top: 35px;
+        border: 3px  #4F709C solid;
+        /* box-shadow: 3px 3px; */
+        /* background-color: hsl(0, 0%, 100%); */
+        border-radius: 12px;
+        background: var(--clr-dark);
+        background-color: #EEF5FF;
+        /* background-color:var(--clr-info-light); */
+        color:black;
+        display:grid;
+        position: absolute;
+
+}
+.buttonpro {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.1em 1.5em;
+  border: 3px solid #111e88;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #FF1700;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.save:hover{
+  color: white;
+  background-color: #FF1700;
+
+}
+
+.buttonpro:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #FF1700;
+  z-index: -1;
+  border-radius: 10px;
+  
+}
+
+.buttonpro:hover, button:focus {
+  color: white;
+}
+
+.buttonpro:hover:before, button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.buttonpro:active {
+  transform: scale(0.9);
+}
+
+.submit1{
+    border-radius: 10px;
+    background-color: var(--clr-primary-variant);
+    box-shadow: 2px 2px ;
+    color: white;
+    font-size: 20px;
+}
+.submit1:hover{
+    background-color: var(--clr-dark-variant);
+}
+.requiredField {
+ 
+  color: #111e88;
+  font-size: 1.2em;
+  font-weight: light;
+}
+
+.textinput{
+  font-size:1.5em;
+  margin-top: .3em;
+  color:grey;
+  font-weight:light;
+  border-radius:5px;
+}
+#id_cover{
+  font-size:1.2em;
+}
+#id_pdf{
+  font-size:1.2em;
+}
+.downloadmain{
+  display:flex;
+  flex-direction:column;
+}
+.download1{
+  text-align:center;
+    border-radius: 5px;
+    color: white;
+    padding: 2px 9px;
+    background-color: #7d8da1;
+}
+.download2{
+  text-align:center;
+  margin-top:.7rem;
+  border-radius: 5px;
+  color: white;
+  padding: 4px 6px;
+  background-color: #83B4FF;
+ 
+
+
+}
+
+.download5{
+  {% comment %} text-align:center; {% endcomment %}
+  margin-top:.7rem;
+  border-radius: 5px;
+  color: white;
+  padding: 4px 6px;
+  background-color: red;
+ margin-left:2em;
+
+}
+.delete1 {
+    color: white;
+    margin-top: 8px;
+    border-radius: 5px;
+    padding: 2px 25px;
+    background-color: #FF7782;
+    cursor: pointer;
+}
+
+
+.rate1{
+   
+    padding: 0px 30px 0px;
+}
+.navbar{
+    color:red;
+    margin-left:20px;
+}
+.main1{
+    display:flex;
+    margin-left:20px;
+    
+}
+
+
+.filter_inside_3{
+    font-size:30px;
+    
+ 
+}
+form{
+    
+    margin-top: 20px;
+}
+.search1{
+    padding: 10px 6px;
+    font-size:18px;
+    border-radius:6px;
+   
+    
+}
+/* From uiverse.io by @Ali-Tahmazi99 */
+
+.searchbutton{
+    padding: 10px 14px;
+    font-size: 15px;
+    color: red;
+    margin-left: -5px;
+    border-radius:6px ;
+    /* background-color: #111e88; */
+    border: 2px solid #FF1700;
+    cursor: pointer;
+    
+}
+
+.searchbutton:hover{
+  color: white;
+  background-color: #FF1700;
+  animation: ease-in-out 5s;
+}
+.top_section{
+  margin-top:-4rem;
+  display:flex;
+  justify-content:space-around;
+  margin-bottom:2.5rem;
+  margin-right:5rem;
+}
+.filter_inside_2 h4{
+  text-align:center;
+}
+
+
+  </style>
+</head>
+
+
+
+<body>
+    <nav class="navbar5 navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'home' %}"><h2>Get <span>iT</span></h2> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% comment %} <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}"><h3>Home</h3> <span class="sr-only"></span></a>
+                </li> {% endcomment %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_book' %}"><h3>Add Document</h3> <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'user_profile' %}"><h3>Profile</h3> <span class="sr-only"></span></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="main1" >
+    <aside>
+        <div class="top">
+          <div class="logo">
+            <h2>My<span class="danger"> Files</span></h2>
+          </div>
+          <div class="close" id="close_btn">
+            <span class="material-symbols-outlined">close</span>
+          </div>
+        </div>
+        <!--end top-->
+        <div class="sidebar">
+          <a href="{% url 'home' %}">
+            <span class="material-symbols-outlined">home</span>
+            <h3>Home</h3>
+          </a>
+          <a href="{% url 'favorite_books' %}">
+              <span class="material-symbols-outlined">menu_book</span>
+              <h3>My library</h3>
+          </a>
+          <a href="{% url 'search' %}">
+            <span class="material-symbols-outlined">play_lesson</span>
+            <h3>Courses</h3>
+          </a>
+          <a href= "{% url 'my_books' %}">
+            <span class="material-symbols-outlined">book_2</span>
+            <h3>MyBooks</h3>
+          </a>
+          {% comment %} <a href="#">
+            <span class="material-symbols-outlined">bookmarks</span>
+            <h3>Recent Documents</h3>
+          </a> {% endcomment %}
+          <a href="{% url 'contact' %}">
+            <span class="material-symbols-outlined">auto_stories</span>
+            <h3>Contact</h3> </a
+          >
+          <a href="{% url 'logout' %}">
+            <span class="material-symbols-outlined">logout</span>
+            <h3>Log Out</h3>
+          </a>
+        
+          <a href="{% url 'add_book' %}">
+            <span class="material-symbols-outlined">add</span><h3>Add notes</h3>
+            </a>
+          
+        </div>
+      </aside>
+      <div class="books1">
+        <div class="top_section">
+          {% comment %} <div class="filter">
+            <div class="filter_inside">
+              <h4>Department Filter</h4>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  Filter by department
+                  <span class="material-symbols-outlined " id="expand">expand_more</span>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">BTech IT</a>
+                  <a href="#">BTech CSE</a>
+                  <a href="#">BCA</a>
+                  <a href="#">BSc</a>
+                  <a href="#">BSc IT</a>
+                  <a href="#">MSc</a>
+                  <a href="#">MCA</a>
+                </div>
+              </div>
+            </div> {% endcomment %}
+            <div class="filter_inside_2">
+              <h4>Category filter</h4>
+              <div class="dropdown">
+                  <button class="dropbtn">
+                      Filter by Category
+                      <span class="material-symbols-outlined">expand_more</span>
+                  </button>
+                  <div class="dropdown-content">
+                      <a href="{% url 'book_list' %}?category=Lecture Notes">Lecture Notes</a>
+                      <a href="{% url 'book_list' %}?category=Romance">Romance</a>
+                      <a href="{% url 'book_list' %}?category=Robotics">Robotics</a>
+                      <a href="{% url 'book_list' %}?category=Summaries">Summaries</a>
+                      <a href="{% url 'book_list' %}?category=Assignments">Assignments</a>
+                      <a href="{% url 'book_list' %}?category=Others">Others</a>
+                  </div>
+              </div>
+          </div>
+         
+           
+            <div class="filter_inside_3">
+              <form method="GET" action="{% url 'search' %}">
+                <input class="search1" type="text" name="q" value="{{ query }}" placeholder="Search for books..."/>
+               
+
+
+                <button class="searchbutton" type="submit">Search</button>
+              
+                </div>
+              </form>
+           
+ </div>
+    <div class="container_new">
+        {% block content %}
+
+        {% endblock content %}
+   
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+{% extends 'upbase.html' %}
+
+{% block title %}Delete Book | {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+<div class="delete3">
+    <h2>Delete Book</h2>
+    <p>Are you sure you want to delete "{{ book.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'my_books' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+
+<style>
+
+.btn{
+    margin-left: 2em;
+
+}
+.btn-danger{
+    background: red;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 5px;
+
+}
+.btn-secondary{
+    background: #1877F2;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.delete3{
+    margin-left: 13rem;
+    border-width: 1;
+    background-color: aliceblue;
+    border: 5px solid;
+    height: 20vh;
+    width: 40vw;
+    text-align: center;
+}
+
+p{
+    margin-top: 1.5em;
+}
+</style>
+
+{% endblock content %}

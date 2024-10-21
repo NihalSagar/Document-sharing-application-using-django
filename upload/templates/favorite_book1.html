@@ -1,0 +1,36 @@
+{% extends 'upbase.html' %}
+{%  block content %}
+
+<div class="container">
+    <h1>Your Favorite Books</h1>
+    <ul>
+        {% for favorite in favorite_books %}
+            <li>
+                <div class="book-info">
+                    <strong>{{ favorite.book.title }}</strong> by {{ favorite.book.author }} <br>
+                    <em>{{ favorite.book.category }}</em>
+                </div>
+                <div class="book-actions">
+                    <a href="{% url 'remove_favorite' favorite.book.id %}">Remove from favorites</a>
+                    <a href="{% url 'delete' favorite.book.id %}">Remove from favorites</a>
+                    <form action="{% url 'delete_book' book.id %}" method="POST">
+                        {% csrf_token %}
+                        <input
+                          type="submit"
+                          role="button"
+                          class="delete1 btn btn-danger"
+                          value="Delete"
+                          onclick="return confirm('Are You sure to delete {{ book.title }}?')"
+                        />
+                      </form>
+
+                </div>
+            </li>
+        {% empty %}
+            <li>No favorite books yet</li>
+        {% endfor %}
+    </ul>
+    <a class="back-link" href="{% url 'home' %}">Back to Home</a>
+</div>
+
+{% endblock content %}

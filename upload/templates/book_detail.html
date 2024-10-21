@@ -1,0 +1,145 @@
+{% extends 'upbase.html' %}
+
+{% block title %}Book Details | {{ book.title }}{% endblock title %}
+
+{% block content %}
+
+<!--aside end-->
+
+<div class="book-detail">
+    <div class="book-cover">
+        <img class="book" src="{{ book.cover.url }}" style="height: 150px" alt="{{ book.title }} cover" >
+    </div>
+    <div class="book-info">
+        <h1>{{ book.title }}</h1>
+        <h3>By {{ book.author }}</h3>
+        <h4>Category: {{ book.category }}</h4>
+        <p>{{ book.description }}</p>
+        <p class="p1">Rating: {{ average_rating|default_if_none:"0" }} ⭐</p>
+    </div>
+
+    <div class="book-reviews">
+        <h3>User Rating:</h3>
+        <ul>
+            {% for rating in ratings %}
+            <li>
+                <strong>{{ rating.user.username    }}</strong>  : {{ rating.rating }}/5⭐
+            </li>
+            {% endfor %}
+            {% if not ratings %}
+            <li>No reviews yet.</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+
+
+
+{% if user.is_authenticated %}
+<div class="rate-book">
+    <h3>Rate this Book</h3>
+    <form method="post">
+        {% csrf_token %}
+        <div class="star-rating">
+            <input type="radio" id="5-stars" name="rating" value="5">
+            <label for="5-stars" class="star">&#9733;</label>
+            <input type="radio" id="4-stars" name="rating" value="4">
+            <label for="4-stars" class="star">&#9733;</label>
+            <input type="radio" id="3-stars" name="rating" value="3">
+            <label for="3-stars" class="star">&#9733;</label>
+            <input type="radio" id="2-stars" name="rating" value="2">
+            <label for="2-stars" class="star">&#9733;</label>
+            <input type="radio" id="1-star" name="rating" value="1">
+            <label for="1-star" class="star">&#9733;</label>
+        </div>
+        <button type="submit">Submit Rating</button>
+    </form>
+</div>
+{% else %}
+<p><a href="{% url 'login' %}">Log in</a> to rate this book.</p>
+{% endif %}
+
+<style>
+    
+   
+        .book-detail {
+            margin-left: em;
+            height: 100%;
+            display: flex;
+            gap: 50px;
+            padding: 20px;
+        }
+    
+        .book-info{
+            height: 100%;
+            
+        }
+        .rate-book {
+            width: 60%;
+            margin-top: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-reviews{
+            margin-left: 7em;
+        }
+        .book-reviews h3{
+            font-size: 1.5em;
+        }
+        .book-reviews ul{
+            margin-top: 1em;
+            line-height: 2;
+        }
+        .p1{
+           
+            margin-top: 3em;
+        }
+        .rate-book h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            font-size: 2em;
+        }
+    
+        .star-rating input {
+            display: none;
+        }
+    
+        .star-rating label {
+            cursor: pointer;
+            color: #ccc;
+        }
+    
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #f5b301;
+        }
+    
+        .rate-book button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+    
+        .rate-book button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock content %}

@@ -1,0 +1,148 @@
+{% extends 'upbase.html' %}
+
+{% block title %}Home | {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+<!--aside end-->
+
+<div class="table1">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Cover</th>
+                <th scope="col">Title</th>
+                <th scope="col">Uploaded By</th>
+                <th scope="col">Category</th>
+                <th scope="col">Action</th>
+                <th class="rating" scope="col"><span class="rate1">Rating</span></th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for book in books %}
+          <tr>
+              <td>
+                  <a href="#"> <img src="{{ book.cover.url }}" style="height: 100px" alt="Cover" /></a>
+              </td>
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.category }}</td>
+              {% comment %} <td class="form-inline">
+                  <div class="downloadmain">
+                      <a class="download1 btn btn-primary mr-2" href="{{ book.pdf.url }}" download="{{ book.title }}.pdf" role="button">Download</a>
+                      <a class="download2 btn btn-primary mr-2" href="{% url 'add_favorite' book.id %}" role="button">Save</a>
+                      
+                  </div>
+              </td> {% endcomment %}
+              <td class="form-inline">
+                <div class="downloadmain">
+                    {% if request.user.is_authenticated %}
+                        {% if request.user.userprofile.has_uploaded_book %}
+                            <a class="download1 btn btn-primary mr-2" href="{{ book.pdf.url }}" download="{{ book.title }}.pdf" role="button">Download</a>
+                            <a class="download2 btn btn-primary mr-2" href="{% url 'add_favorite' book.id %}" role="button">Save</a>
+                        {% else %}
+                            <span class="text-danger"><a href="{% url 'add_book' %}">Upload to access download</a> </span>
+                        {% endif %}
+                    {% else %}
+                        <a class="download1 btn btn-primary mr-2" href="{% url 'login' %}" role="button">Login to Download</a>
+                    {% endif %}
+                </div>
+            </td>
+              <td class="rate5">
+                  <a class="rate5" style="margin-left: 20px" href="{% url 'book_detail' book.id %}"><b > Rating </b> {{ average_rating|default_if_none:"0" }}</a>
+                 
+              </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<style>
+
+    .rate5{
+        color: black;
+    }
+
+    td {
+        color: black;
+        padding-left: 33px;
+        padding-right: 33px;
+    }
+    .text-danger{
+        background: #1877F2;
+        border-radius: 5px;
+        color: white;
+        font-weight: ;
+        padding: 2px 1px;
+        text-align: center;
+    }
+
+    .text-danger a{
+        color: white;
+    }
+    .pagination-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: -40px;
+        color: red;
+    }
+
+    .pagination {
+        display: flex;
+        list-style: none;
+    }
+
+    .page-item {
+        margin: 0 5px;
+    }
+
+    .page-link {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        background-color: #f7f7f7;
+        color: #333;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .page-link:hover {
+        background-color: #e9ecef;
+    }
+</style>
+
+<div class="pagination1 pagination-wrapper">
+    <nav aria-label="Search pages result">
+        <ul class="pagination">
+            {% if books.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ books.previous_page_number }}">Previous</a>
+            </li>
+            {% endif %}
+
+            {% if books.number > 2 %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ books.number|add:'-2' }}">{{ books.number|add:'-2' }}</a>
+            </li>
+            {% endif %}
+
+            {% if books.number > 1 %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ books.number|add:'-1' }}">{{ books.number|add:'-1' }}</a>
+            </li>
+            {% endif %}
+
+            <li class="page-item active">
+                <a class="page-link" href="?page={{ books.number }}">{{ books.number }}</a>
+            </li>
+
+            {% if books.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ books.next_page_number }}">Next</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+{% endblock content %}

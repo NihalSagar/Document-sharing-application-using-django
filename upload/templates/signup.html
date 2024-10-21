@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+body{
+ 
+font-family: 'Poppins', sans-serif;
+
+}
+    .success{
+        color:red;
+    }
+    body{
+        background:url("https://cache.careers360.mobi/media/colleges/reviews/2023/4/4/195256/IMG_20221125_194137_1.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size:100% 100%;
+    }
+    h1 {
+        margin-bottom:27px;
+        color:white;
+
+    }
+    form {
+        
+        align: center;
+        width: 28%;
+        margin: auto;
+        padding: 55px; 
+
+
+        margin-top: 40px;
+        margin-left:55%;
+        padding-top: 35px;
+        /* background-color: hsl(0, 0%, 100%); */
+        border-radius: 12px;
+        background-color:#31304D;
+        color:white;
+        display:grid;
+        backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+
+        
+
+    }
+    a{
+        color:yellow;
+    }
+    h1{
+
+    }
+    
+</style>
+<body>
+    <form action="" method="POST" novalidate>
+        <h1>Sign In Form</h1>
+        {% csrf_token %}
+        {% for fm in form %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+        <a href="{% url 'login' %}">login Here</a>
+    </form>
+    {% if messages %}
+        {% for messages in messages%}
+        <small {% if messages.tags %} class="{{messages.tags}}" {% endif %}>{{messages}}</small>
+        {%endfor%}
+        {%endif%}
+</body>
+</html>

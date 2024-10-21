@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'Profilebase.html' %}
+
+{% block title %}Home | {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+
+
+   
+      <!--aside end-->
+<div class="profilename">
+    <h2>{{name}}</h2>
+</div>
+
+    <div class="profileimg">
+        <a href=""><img class="pimg" src="https://th.bing.com/th/id/OIP.hmLglIuAaL31MXNFuTGBgAAAAA?rs=1&pid=ImgDetMain" alt=""> 
+        </a>
+    </div>
+    <button class="buttonpro" action="submit">Upload New Photo</button>
+    <div class="prowriting">
+        <p>Upload a new avatar, Larger image will be automatically resized.</p>
+        <p>Maximum upload limit is <b>2mb</b></p>
+    </div>    
+    {% comment %} <div class="profile1">
+
+   
+        <h1>Welcome {{name}}</h1>
+        <h2>Home Page</h2>
+        <a href="{% url 'changepass' %}">Change Password</a>&nbsp&nbsp
+        <a href="{% url 'logout'%}">Logout</a>
+     </div> {% endcomment %}
+{% endblock content %}
+  
+</body>
+</html>

@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{%  block content %}
+<header>
+    <nav class="navbar">
+       <div><h2>Get <span>iT</span>
+       </h2></div>
+       <div class="top">
+           {% comment %} <div class="Dash"><h3> <a href= "{%url 'dashboard'%}">Dashboard</a></h3></div>       {% endcomment %}
+        <div class="profile">
+          <div class="info">
+            <p>{{name}}</p>
+    <a href="{% url 'logout'%}">Logout</a>
+
+      
+          </div>
+          <div class="profile-photo">
+            <a href="{% url 'user_profile' %}"><img src="https://i.stack.imgur.com/l60Hf.png" alt="" /></a>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+</header>
+<section class="hero-section" id="hero">
+   
+    <div class="main">
+        
+        <!-- index.html -->
+        <div class="search-container">
+            <form method="get" action="{% url 'search' %}">
+                <input type="text" placeholder="Search..." name="q" value="{{ query }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <marquee width="50%" behavior="alternate" direction="Right"><div class="note"> <span>**Note you must upload min 1 file before downloading any documents.**</span></div></marquee>
+</section>
+<!-- <section class="document">
+
+    <div class="docu">
+        <h2>DOCUMENT</h2>
+    </div>
+    <div class="files_container">
+        <div class="doc1">
+           <a href=""> <img width="150px" src="static/images/FILES2.jpg" alt="files1"></a>
+        </div>
+        <div class="doc2">
+           <a href=""> <img width="150px" src="static/images/FILES3.jpg" alt="files1"></a>
+        </div>
+        
+         <div class="doc3">
+            <img width="350px" src="static/images/man2.png" alt="man2">
+        </div>
+
+    </div>
+   
+
+</section> -->
+<!-- <section class="carousel">
+        
+    </section> -->
+    <section class="Carousel1">
+    <section class="work">
+        <div class="grid_item">
+            <div class="card">
+                <div class="image_container">
+                    <img class="webimg" src="https://th.bing.com/th/id/OIP.81MvpQbcnaZJu6Tc2C7XzQHaHa?rs=1&pid=ImgDetMain" alt="Web Development"/>
+
+    
+                </div>
+                <div class="card_content">
+                    <h3>Web Development </h3>
+                    <p> Accelerated Mobile Pages (AMP) is the future of web development. AMP technology is introduced to create web pages that load faster on mobile by stripping down HTML.</p>
+                </div>
+    
+            </div>
+        </div>
+        <div class="grid_item">
+            <div class="card">
+                <div class="image_container">
+                    <img class="uiuximg" src="https://th.bing.com/th/id/OIP.iluTdY_2__GZp40TTBfG_AAAAA?rs=1&pid=ImgDetMain" alt="UI/UX Development"/>
+                </div>
+                <div class="card_content">
+                    <h3>UI/UX Development </h3>
+                    <p> It renders the latest technology accessible to the masses, makes our favourite apps and websites a pleasure to use.</p>
+                </div>
+    
+            </div>
+        </div>
+        
+        <div class="grid_item">
+            <div class="card">
+                <div class="image_container">
+                    <img class="appimg" src="https://th.bing.com/th/id/OIP.xqg3QveEHg58-FCjcDg_5wHaFz?w=198&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="App Development"/>
+
+    
+                </div>
+                <div class="card_content">
+                    <h3>App Development </h3>
+                    <p> Mobile app would help put your business in your customer’s pockets.The future of mobile is the future of online.</p>
+                </div>
+    
+            </div>
+        </div>
+        
+
+        </div>
+       
+   
+
+
+     </section>
+    </section>
+     <section class="footer-upper">
+            <div class="container">
+              <div class="logoget">
+                <h2>Get <span>iT</span></h2>
+               
+              </div>
+              <div class="footer-links">
+                <h4>Support</h4>
+                <ul class="foo1">
+                  {% comment %} <a href="{% url 'aboutus' %}"><li>About Us</li></a> {% endcomment %}
+                  <a href="{% url 'contact' %}"><li>Contact</li></a>
+                  <a href=""><li>Blog</li></a>
+                  <a href=""><li>Library</li></a>
+                  <a href=""><li>E-Learning Statitics</li></a>
+                </ul>
+              </div>
+              <div class="footer-links2">
+                <h4>Company</h4>
+                <ul class="foo1">
+                    {% comment %} <a href="{% url 'contact' %}"><li>Contact</li></a> {% endcomment %}
+                  <a href="{% url 'about' %}"><li>About</li></a>
+                  <a href=""><li>Help</li></a>
+                  <a href=""><li>Privacy Policy</li></a>
+                  <a href=""><li>Learning resources</li></a>
+                  
+                </ul>
+              </div>
+
+              <div>
+               <div></div>
+
+                    </div>
+                
+          
+          </section>
+
+
+   
+    <footer>
+        
+        <ul class="social">
+            <div>Copyright © 2023. All Rights Reserved</span></div>
+           <div class="sociallogo">
+            <a href="https://www.linkedin.com/in/nima-dorjee-lama-b44081217" target="_blank">
+                <li><img class="linkdn" src="https://logolook.net/wp-content/uploads/2021/06/Symbol-Linkedin.png" class="link" alt="Linkedin" ></li>
+            </a>
+            <a href="" target="_blank">
+                <li><img class="facebook" src="https://th.bing.com/th/id/R.e790c25db5e52838040686612b1a732c?rik=uVuLX4sResGMKA&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19757.png&ehk=JL234rPBfx%2bf3tobhEVbPdNgJiWOhk251WyRwRAg940%3d&risl=&pid=ImgRaw&r=0" class="link" alt="facebook"></li>
+            </a>
+            <a href="" target="_blank">
+                <li><img class="insta" src="https://newhorizonindia.edu/co-curricular/healthxcel/wp-content/uploads/sites/7/2023/12/Instagram-icon-Logo-2016-present-1024x576.png" alt="insta"></li>
+            </a>
+            <a href="https://github.com/NIMADORJEELAMA" target="_blank">
+                <li><img class="github" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914417/github-icon-md.png" alt="github" ></li>
+            </a>
+            </div>
+
+            
+        </ul>
+     </footer>
+
+
+{% endblock  %}

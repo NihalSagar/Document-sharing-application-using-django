@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    label{
+        font-weight:bold;
+        font-size: 15px;
+    }
+    input{
+        font-size: 15px;
+    }
+
+    .Save{
+        padding: 5px 15px;
+        background-color: blue;
+        border-radius: 5px;
+        color: white;
+    
+    }
+
+</style>
+<body>
+    {% extends 'Profilebase.html' %}
+
+{% block title %}Home | {{ block.super }}{% endblock title %}
+
+{% block content %}
+
+
+
+   
+      <!--aside end-->
+
+
+<div class="password1">
+
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% for fm in form %} <br><br>
+    {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br>
+    {% endfor %}
+    <br>
+    <input class="save" type="submit" value="Save">
+</form>
+</div>
+</div>
+{% endblock content %}
+  
+</body>
+</html>

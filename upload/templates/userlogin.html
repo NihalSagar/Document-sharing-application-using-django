@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+body{
+ 
+font-family: 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    background: var(--clr-color-background);
+
+}
+
+
+/* variables */
+
+
+:root {
+  --clr-primary: #7380ec;
+  --clr-danger: #ff7782;
+  --clr-success: #41f1b6;
+  --clr-white: #fff;
+  --clr-info-dark: #7d8da1;
+  --clr-info-light: #dce1eb;
+  --clr-dark: #363949;
+  --clr-warnig: #ff4edc;
+  --clr-light: rgba(132, 139, 200, 0.18);
+  --clr-primary-variant: #111e88;
+  --clr-dark-variant: #677483;
+  --clr-color-background: #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+  --box-shadow: 0 2rem 3rem var(--clr-light);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 0;
+    list-style: none;
+    appearance: none;
+}
+
+
+        .error{
+            color:red;
+            font-size: .7em;
+            margin-top: 1%;
+            text-align: center;
+            padding: 4px 9px;
+        }
+        /* {
+            background:url("https://assets.telegraphindia.com/telegraph/2021/Sep/1632989976_main-gate-university.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size:100% 100%;
+            backdrop-filter: blur(10px);
+            
+           
+        } */
+       
+         
+            
+            /* align: center; */
+            /* height: 60%; */
+            /* width: 27%;
+           position: absolute;
+            {% comment %} margin: auto; {% endcomment %}
+            padding: 50px 20px; 
+            margin-top: 8vh;
+            
+            margin-left:19%;
+            padding-top: 35px;
+           
+            border-radius: 12px;
+            background-color:var(--clr-white);
+            color:white;
+            backdrop-filter: blur(10px);
+    {% comment %} background-color: rgba(255,255,255,0.13); {% endcomment %} */
+            
+  
+    
+        
+       
+       
+     
+        /* form 
+        .login{
+            background-color: #111e88;
+            width: 100%;
+            border-radius: 10px ;
+            margin-top: -20px;
+        } */
+         form{
+            width: 100%;
+         }
+    
+        .login {
+            font-size: 1.4em;
+            text-align: center;
+            color: black;
+            font-family:   sans-serif;
+            margin-bottom: 2em;
+            margin-top: 2em;
+            width: 100%;
+        }
+        .password{
+            /* margin-top: 40px; */
+            margin-left: 1.7em;
+            line-height: 1.7;
+            font-weight: light;
+            font-size: 1.3rem;
+            color: black;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .password input{
+            background:  var(--clr-color-background);
+            /* background-color: var(--clr-info-light); */
+            border-radius: 4px;
+            height: 25px;
+            margin-top: -1px;
+            margin-left: 1.4em;
+            border: 1px solid;
+        }
+
+        .submit{
+            margin-left: 5rem;
+            background-color: #111e88;
+            border-radius: 5px;
+            padding: 5px 20px;
+            cursor: pointer;
+            font-family: 'poppins';
+            color: white;
+        }
+        .submit:hover{
+            background-color: var(--clr-dark-variant);
+            color: white;
+        }
+        .submitadmit{
+            margin-left: 2rem;
+            background-color: #111e88;
+            border-radius: 5px;
+            padding: 5px 20px;
+            cursor: pointer;
+            font-family: 'poppins';
+            color: white;
+        }
+        .submitadmit:hover{
+            background-color: var(--clr-dark-variant);
+            color: white;
+        }
+        .buttonlog{
+            margin-left: 1em;
+        }
+
+        .buttonlog h5{
+           font-family:  Arial, Helvetica, sans-serif;
+           font-weight: light;
+           /* padding: 0 8em 0 8em; */
+           margin-top: 4em;
+           text-align: center;
+           margin-left: em;
+          color: black;
+        }
+        .buttonlog h5:hover{
+                color: gray;
+                text-decoration: underline;
+                
+        }
+        .signup{
+            padding: 5px 20px;
+            margin-left: 4em;
+            color: white;
+            font-size: 12px;
+            background-color: #111e88;
+            border-radius: 20px;
+        }
+        .signup:hover{
+            background-color: var(--clr-dark-variant);
+        }
+        a{
+            color:var(--clr-primary);
+        }
+         /* .sign h4{
+            margin-left: 8rem;
+        }  */
+      
+      
+      
+nav{
+    text-align: center;
+    background:#111e88;
+    padding-top: 5px;
+    
+}
+nav h1{
+    font-size:2rem;
+    color:white;
+}
+.Log_get{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 2em;
+}
+        span{
+            color:#ff7782;
+            margin-right:10px;
+        }
+        
+
+      
+        /* footer upper*/
+        .footer-upper {
+            margin-top:4%;
+          background-color: rgb(47, 71, 150) ;
+          /* background-color: var(--purple600); */
+          padding: 20px;
+        }
+        .footer-upper .container {
+          display: flex;
+          color: white;
+          /* justify-content: space-between; */
+         /* gap: 30%; */
+        }
+        
+        
+        .footer-upper h4 {
+          padding-bottom: 10px;
+          border-bottom: 2px solid white;
+          margin-bottom: 10px;
+        }
+        
+        .logoget{
+          margin-left: 10%;
+          padding-right: 30px ;
+        }
+        .footer-links{
+          margin-left: 30%;
+        
+        }
+        .footer-links2{
+          margin-left: 10%;
+        
+        }
+        .mancontain{
+          width: auto;
+          height: auto;
+        
+        }
+        
+        .MAN{
+          width: 50ch;
+          height: 50ch;
+        }
+        
+          .appstore{
+            width:100 px;
+            height:100 px;
+            background:url('static/images/appstore.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+           }
+        
+    .footer-links a{
+        color: white;
+    }
+    .footer-links2 a{
+        color: white;
+    }
+        
+        .footer-links a :hover{
+          text-decoration-line: underline;
+        
+        }
+        .footer-links2 a :hover{
+            text-decoration-line: underline;
+          
+          }
+          
+
+        footer{
+            text-align: left;
+            text-transform: uppercase;
+            background-color: #1d1d42;
+            margin-top: 12%;
+            padding: 20px;
+            color: white;
+            font-size: 10px;
+            
+          }
+          
+          .social{
+            display: flex;
+            justify-content: space-between ;
+          }
+          
+          .sociallogo{
+            display: flex;
+            gap: 15px;
+            text-decoration: none;
+            list-style-type: none;
+            margin-right: 1em;
+          
+          }
+          .logoget span{
+            color: var(--clr-danger);
+          }
+          
+          .link{
+            max-width: 30px;
+          }
+          
+.linkdn{
+    width: 50px;
+}
+
+.facebook{
+    width: 30px;
+
+}
+.insta{
+    width: 50px;
+}
+.github{
+    width: 30px;
+}
+.container4{
+    /* position: relative; */
+    /* background: rgb(224, 224, 223); */
+    height: 100vh;
+  
+    position: fixed;
+    width: 100%;
+    
+}
+.containermain1{
+    /* background: rgb(224, 224, 223); */
+    /* background: orange; */
+        height: 70vh;
+       margin-top: 7rem;
+       position: relative;
+       
+        
+     
+    }
+
+.containerlogin{
+            display:flex;
+            height: 100%;
+           justify-content: space-around;
+            
+            border-radius: 2em;
+            background: white;
+            width: 50%;
+            margin-left: 22rem;
+            border: 2px solid rgba(red, 255, 255, .18);
+            backdrop-filter: blur(30px);
+            box-shadow: 0px 25px 20px -20px rgba(0,0,0,0.45),
+            25px 0px 20px -20px rgba(0,0,0,0.45);
+        }
+        .loginleft >img{
+            width: 22rem;
+            margin-top:2rem;
+            padding: 3em;
+            /* margin-left:5rem; */
+        }
+        .loginright{
+            /* background: red; */
+            margin-left: 2em;
+            border-radius: 2em;
+            display: flex;
+            width: 100%;
+            box-shadow: -25px 0 20px -20px rgba(0, 0, 0, 0.1);
+        }
+        .contactlog{
+            display: flex;
+            justify-content: space ;
+            margin-left: 7rem;
+            margin-top: 4rem;
+            align-items: center;
+            text-align: center;
+            
+        }
+        .contact5{
+            font-weight: lighter;
+        }
+        .logocontact{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+   
+    
+<section class="container4">
+    <div class="containermain1">
+
+    
+    <div class="containerlogin">
+     
+        <div class="loginleft">
+            <img src="https://www.adimudra.com/assets/images/signup-image.jpg" alt="">
+            <!-- <img src="https://cdn-icons-png.flaticon.com/512/6601/6601115.png" alt=""> -->
+            <div class="Log_get"><h1>Get <span>IT</span>
+            </h1></div>
+        </div>
+
+      <!-- <div class="loginleft"><img src="https://cdn.icon-icons.com/icons2/1852/PNG/512/iconfinder-secureserver-4417098_116636.png" alt=""></div>  -->
+        <div class="loginright">
+            <form action="" method="POST" novalidate>
+            <div class="login">
+                <h1>Login Form</h1>
+            </div>
+            
+            {% csrf_token %}
+            {%for fm in form%}
+            <div class="password">
+                {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}<br><br>
+
+
+                
+            </div>
+          
+            {% endfor %}
+            <div class="buttonlog">
+            <input class="submit" type="submit" value="Log in">
+            <a class="submitadmit" href="http://127.0.0.1:8000/admin/login/?next=/admin/"> Admin</a>
+            <a href=""><h5>Forgot Password?</h5></a>
+            </div>
+            <div class="sign">           
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="error">{{error}}</p>
+                {% endfor %}
+            {% endif %}
+          
+        </div>
+     
+        <div class="contactlog">
+                
+            <div class="contact5"><h5>or contact with</h5></div>
+            <div class="logocontact">
+                <li>  <a href="https://www.linkedin.com/in/nima-dorjee-lama-b44081217" target="_blank">
+                    <li><img class="linkdn" src="https://logolook.net/wp-content/uploads/2021/06/Symbol-Linkedin.png" class="link" alt="Linkedin" ></li>
+                </a></li>
+                <li> <a href="https://github.com/NIMADORJEELAMA" target="_blank">
+                    <li><img class="github" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914417/github-icon-md.png" alt="github" ></li>
+                </a></li>
+            </div>
+            
+    
+        </div>
+        </form>
+        
+    </div>
+    </div>
+    </div>
+</section>
+    <!-- <section class="footer-upper">
+        <div class="container">
+          <div class="logoget">
+            <h2>Get <span>iT</span></h2>
+           
+          </div>
+          <div class="footer-links">
+            <h4>Support</h4>
+            <ul class="foo1">
+              {% comment %} <a href="{% url 'aboutus' %}"><li>About Us</li></a> {% endcomment %}
+              <a href=""><li>Contact</li></a>
+              <a href=""><li>About</li></a>
+              {% comment %} <a href=""><li>Company</li></a>
+              <a href=""><li>E-Learning Statitics</li></a> {% endcomment %}
+            </ul>
+          </div>
+          <div class="footer-links2">
+            <h4>Company</h4>
+            <ul class="foo1">
+                {% comment %} <a href="{% url 'contact' %}"><li>Contact</li></a> {% endcomment %}
+              <a href=""><li>Help</li></a>
+              <a href=""><li>Privacy Policy</li></a>
+              {% comment %} <a href=""><li>Privacy Policy</li></a>
+              <a href=""><li>Learning resources</li></a> {% endcomment %}
+              
+            </ul>
+          </div>
+
+          <div>
+           <div></div>
+
+                </div>
+            
+      
+      </section> -->
+    <!-- <footer>
+        
+        <ul class="social">
+            <div>Copyright © 2023. All Rights Reserved</span></div>
+           <div class="sociallogo">
+            <a href="https://www.linkedin.com/in/nima-dorjee-lama-b44081217" target="_blank">
+                <li><img class="linkdn" src="https://logolook.net/wp-content/uploads/2021/06/Symbol-Linkedin.png" class="link" alt="Linkedin" ></li>
+            </a>
+            <a href="https://www.facebook.com/nima.lama.50999405?mibextid=LQQJ4d" target="_blank">
+                <li><img class="facebook" src="https://th.bing.com/th/id/R.e790c25db5e52838040686612b1a732c?rik=uVuLX4sResGMKA&riu=http%3a%2f%2fpngimg.com%2fuploads%2ffacebook_logos%2ffacebook_logos_PNG19757.png&ehk=JL234rPBfx%2bf3tobhEVbPdNgJiWOhk251WyRwRAg940%3d&risl=&pid=ImgRaw&r=0" class="link" alt="facebook"></li>
+            </a>
+            <a href="https://instagram.com/nyima_21?igshid=YmMyMTA2M2Y=" target="_blank">
+                <li><img class="insta" src="https://newhorizonindia.edu/co-curricular/healthxcel/wp-content/uploads/sites/7/2023/12/Instagram-icon-Logo-2016-present-1024x576.png" alt="insta"></li>
+            </a>
+            <a href="https://github.com/NIMADORJEELAMA" target="_blank">
+                <li><img class="github" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914417/github-icon-md.png" alt="github" ></li>
+            </a>
+            </div>
+
+            
+        </ul>
+     </footer> -->
+
+    
+
+</body>
+</html>
